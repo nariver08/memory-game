@@ -1,0 +1,49 @@
+/* src/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.app {
+  padding: 20px;
+}
+
+.card-container {
+  /* position: relative; */
+  width: 100%;  /* 幅を画面いっぱいに */
+  height: 100vh; /* 高さを画面いっぱいに */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 80px;
+  height: 120px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card.flipped {
+  background-color: #fff;
+  color: #000;
+}
+
+.game-over {
+  font-size: 24px;
+  color: green;
+  position: relative;
+  top: 80px;
+}
