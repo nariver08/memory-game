@@ -145,7 +145,7 @@ const App = () => {
   };
 
   const handleShareOnTwitter = () => {
-    const elapsedTime = Math.floor((endTime - startTime - 3) / 1000); // 経過時間を秒単位で計算
+    const elapsedTime = Math.floor((endTime - startTime) / 1000) - 3; // 経過時間を秒単位で計算
     const minutes = Math.floor(elapsedTime / 60); // 分に変換
     const seconds = elapsedTime % 60; // 秒に変換
 
@@ -154,7 +154,7 @@ const App = () => {
     const tweetText = encodeURIComponent(
       `動く神経衰弱：${
         cardCount * 2
-      }枚を${timeText}でクリアしました！ #神経衰弱`
+      }枚を${timeText}でクリアしました！ #神経衰弱 https://memory-game-seven-lac.vercel.app/`
     );
     const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
     window.open(twitterUrl, "_blank"); // Twitterの投稿画面を開く
@@ -166,7 +166,7 @@ const App = () => {
     }
   }, [isGameOver]);
 
-  const elapsedTime = endTime ? Math.floor((endTime - startTime) / 1000) : 0;
+  const elapsedTime = endTime ? Math.floor((endTime - startTime) / 1000) - 3 : 0;
   const minutes = Math.floor(elapsedTime / 60);
   const seconds = elapsedTime % 60;
   const timeText = minutes > 0 ? `${minutes}分${seconds}秒` : `${seconds}秒`;
